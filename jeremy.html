@@ -2,62 +2,96 @@
 <html>
 <head>
     <style type="text/css">
-        h1{color: aqua;
+        .title {color: aqua;
         font-family:"Lucida Console";
         text-align: center;
+        border-bottom-style:solid;
+        border-color:white;
+        border-width:1px;
         }
-        h3{color:red
+        .mudkip {color:darkcyan;
+        font-family:"Arial";
+        }
+        h3 {color:red;
         }
         body {background-color:darkslategrey;
         color:white;
         }
         td {font-family:"Arial";   
         }
-        table{border-color:white;
+        table {border-color:white;
+        }
+        a:link {color:yellow;
+            }
+        a:visited {
+            color: orange;
+            }
+        a:hover {color:white;
+            background-color:red;
+            font-weight:bold;
+            text-decoration: none;
+            }
+        a:active {background-color:white;
+        color:red;
+        text-decoration: none;
+            }
+        ul {list-style-image:url(star.png);
+        }
+        #mudkipPic {position:absolute;
+        top:200px;
+        left:1000px;
+        }
+        #mudkipDesc {position:absolute;
+        top:135px;
+        left:1250px;
         }
     </style>
     <title>Jeremy's Anime Land</title>
 </head>
 
 <body>
-    <h1>Jeremy's Anime Land</h1>
-    <a href="index.html" title="Main page"> <h2>Go back</h2></a>
-    <table width="100%">
-        <td>
-            <table border="1" cellpadding="3" cellspacing"3" width="100%">
-                <tr colspan="2"><h2>Jeremy's Anime Hall of Fame</h2></tr>
+    <h1 class="title">Jeremy's Anime Land</h1>
+    <h2><a href="index.html" title="Main page"> Go back</a></h2>
+        <table border="1" cellpadding="3" cellspacing"3" width="50%">
+            <tr colspan="2"><h2>Jeremy's Anime Hall of Fame</h2></tr>
+            <tr>
+                 <th><h3>Title</h3></th>
+                <th><h3>Anime</h3></th>
+                <th><h3>Why</h3></th>
+            </tr>
+            <tr>
+                 <td>Cory In The House</td>
+                <td><img src="coryInTheHouse.jpg" width="100%"></td>
+                 <td>Cause Cory's in the house</td>
+            </tr>
                 <tr>
-                    <th><h3>Title</h3></th>
-                    <th><h3>Anime</h3></th>
-                    <th><h3>Why</h3></th>
-                </tr>
-                <tr>
-                    <td>Cory In The House</td>
-                    <td><img src="coryInTheHouse.jpg" width="100%"></td>
-                    <td>Cause Cory's in the house</td>
-                </tr>
-                <tr>
-                    <td>Spongebob Squareshoes</td>
-                    <td><img src="spongebob.png" width="100%"></td>
-                    <td>Cause squidbird</td>
-                </tr>
-                <tr>
-                    <td>Adventures of Carl Wheezer</td>
-                    <td><img src="carlwheezer.jpg" width="100%"></td>
-                    <td>Llamas</td>
-                </tr>
-                <tr>
-                        <td>Pocki the Grappler</td>
-                        <td><img src="baki.jpg" width="100%"></td>
-                        <td>Every boy wants be worlds strongest man</td>
-                    </tr>
+                <td>Spongebob Squareshoes</td>
+                <td><img src="spongebob.png" width="100%"></td>
+                <td>Cause squidbird</td>
+            </tr>
+            <tr>
+                <td>Adventures of Carl Wheezer</td>
+                <td><img src="carlwheezer.jpg" width="100%"></td>
+                <td>Llamas</td>
+            </tr>
+            <tr>
+                    <td>Pocki the Grappler</td>
+                    <td><img src="baki.jpg" width="100%"></td>
+                    <td>Every boy wants be worlds strongest man</td>
+            </tr>
+            <tr>
+                <td>Light's Potato Chip</td>
+                <td><img src="light.jpg" width="100%"></td>
+                <td>"...and eat it!"</td>
+            </tr>
                 
             </table>
-        </td>
-        <td>
-            <img src="Birch_Mudkip.png" width="100%">
-        </td>
-    </table>
+    <div id="mudkipDesc">
+        <h1 class="mudkip">A wild Mudkip has appeared!</h1>
+    </div>
+    <div id="mudkipPic">
+        <img src="Birch_Mudkip.png" width="100%">
+    </div>
     <h3>Honorable Mentions</h3>
     <ul>
         <li>Pedro</li>
