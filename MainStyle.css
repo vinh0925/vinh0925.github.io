@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Nixie+One');
+
+h1{color:#336600;
+    text-align: center;
+    border-bottom-width:1px;
+    border-color:white;
+    border-bottom-style:solid;
+    font-family: 'Nixie One', cursive;
+    }
+a:link{color:yellow;
+    }
+a:visited{
+    color: orange;
+    }
+a:hover{color:white;
+    background-color:red;
+    font-weight:bold;
+    text-decoration: none;
+    }
+a:active{background-color:white;
+color:red;
+text-decoration: none;
+    }
+body{background-color:black;
+    color:white;
+    font-family: 'Libre Baskerville', serif;
+    }
