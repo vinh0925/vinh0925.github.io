@@ -3,19 +3,53 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <style type="text/css">
-
+        span{color:gold;
+        font-weight: bold;
+        font-style:italic;
+        }
+        .desc{color:yellow;
+        }
+        body{line-height: 200%;}
     </style>
     <title>Guess A Number!</title>
 </head>
-
+<script type="text/javascript">
+var secretRevealed = false;
+    function check() {
+        if (document.forms[0].elements[0].value == '0' && 
+            document.forms[0].elements[1].checked && 
+            document.forms[0].elements[3].value == "plato" &&
+            !secretRevealed) {
+                var _body = document.getElementsByTagName('body') [0];
+                var img = document.createElement('img');
+                img.setAttribute('src', 'https://media1.tenor.com/images/fd559ba05f7a8d5c07e198705c5385ea/tenor.gif?itemid=5320578');
+                img.setAttribute('alt', 'Picture');
+                _body.appendChild(img);
+                secretRevealed = true;
+        }
+        else if(!secretRevealed) {
+            alert("INCORRECT!");
+        }
+    }
+</script>
 <body>
     <h1>GUESS A NUMBER!</h1>
     <h2><a href="index.html" title = "Home"> Go Back</a></h2>
     <form>
-        Guess a number between 1 - 10: <input type="text" name="number"
-             maxlength="2" value="In here, ya doofus."/> <br />
-        Man: <input type="radio" name="sex" value="man"/>
-        Reptile: <input type="radio" name="sex" value="rep"/>
+        <span id="desc">Select the right combination of choices. The secret of the universe will be revealed <br /></span>
+        Guess a number between 0 - 10: <input type="text" name="number"
+             maxlength="2"/> <br />
+        Man: <input type="radio" name="sex" value="man" checked/>
+        Reptile: <input type="radio" name="sex" value="rep"/> <br />
+        Pick a Philosopher:
+        <select name="philosphers"/>
+            <option value="socrates"/>Socrates</option>
+            <option value="aristotle"/>Aristotle</option>
+            <option value="epicurus"/>Epicurus</option>
+            <option value="plato"/>Plato</option>
+        </select> <br />
+        <span>HINT !</span> Zero Man's Play Doh <br />
+        <input type="button" value="Guess!" onClick="check()"/>
     </form>
 </body>
 
