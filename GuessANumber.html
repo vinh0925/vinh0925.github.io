@@ -13,6 +13,7 @@
     </style>
     <title>Guess A Number!</title>
 </head>
+<!--<div class="tenor-gif-embed" data-postid="5320578" data-share-method="host" data-width="100%" data-aspect-ratio="1.7785714285714287"><a href="https://tenor.com/view/bee-adventuretime-bumble-bumblebee-cute-gif-5320578">Bee Adventuretime GIF</a> from <a href="https://tenor.com/search/bee-gifs">Bee GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>-->
 <script type="text/javascript">
 var secretRevealed = false;
     function check() {
@@ -22,13 +23,31 @@ var secretRevealed = false;
             !secretRevealed) {
                 var _body = document.getElementsByTagName('body') [0];
                 var img = document.createElement('img');
-                img.setAttribute('src', 'https://media1.tenor.com/images/fd559ba05f7a8d5c07e198705c5385ea/tenor.gif?itemid=5320578');
-                img.setAttribute('alt', 'Picture');
-                _body.appendChild(img);
+                var div = document.createElement('div');
+                div.setAttribute('class', "tenor-gif-embed");
+                div.setAttribute('data-postid', "5320578");
+                div.setAttribute('data-share-method', "host");
+                div.setAttribute('data-width', "100%");
+                div.setAttribute('data-aspect-ratio', "1.7785714285714287");
+                var a = document.createElement('a');
+                a.setAttribute('href', "https://tenor.com/view/bee-adventuretime-bumble-bumblebee-cute-gif-5320578");
+                a.innerHTML = 'Bee Adventuretime GIF';
+                div.appendChild(a);
+                var a2 = document.createElement('a');
+                a2.setAttribute('href', "https://tenor.com/search/bee-gifs");
+                a2.innerHTML = 'Bee GIFS';
+                div.appendChild(a2);
+                _body.appendChild(div);
+                var script = document.createElement('script');
+                script.setAttribute('type', "text/javascript");
+                script.async = true;
+                script.setAttribute('src', "https://tenor.com/embed.js");
+                _body.appendChild(script);
                 secretRevealed = true;
         }
         else if(!secretRevealed) {
             alert("INCORRECT!");
+            
         }
     }
 </script>
