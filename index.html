@@ -5,9 +5,21 @@
     <style type="text/css">
         h1 {color: rgb(231, 214, 214);
         text-align: center;
-        border-bottom-width:1px;
+        border-bottom-width:3px;
         border-color:white;
         border-bottom-style:solid;
+        }
+        h3 {
+            color:turquoise;
+        border-bottom-width:1px;
+        border-color:gray;
+        border-bottom-style:solid;
+        }
+        p {
+            text-indent: 40px;
+        }
+        h4 {
+            color:brown
         }
         a:link{color:yellow;
         }
@@ -31,10 +43,69 @@
     <title>Vinh's Page</title>
 </head>
 <body>
-    <h1>Vinh's Page</h1>
-    <h2><a href="jeremy.html" title = "Jeremy"> For Jeremy</a></h2>
+    <h1>Vinh Pham</h1>
+    <h2>Projects: </h2>
+    <h3>Overseer</h3>
+    <p>This is a chrome extension that tracks how much time you spend on every website you visit.
+         It displays a top 10 list of websites sorted in how much time spent on each website. There
+         is also a graph to help visualize this data using chart.js.
+    </p>
+    <h4>How it works</h4>
+    <p>The extension tracks time by getting the using a date object to get the current time. It does 
+        this every time the user visits a new page and changes tabs so that every time the user is viewing
+        a different page, the extension gets the time again and stores the difference from the previous get.
+        The times and stores as values in a hashtable with the keys being the urls.
+    </p>
+    <h3>PrettyYTComments</h3>
+    <p>This is a chrome extension that adds the font. "Gaegu" to all Youtube Comments. Additionally, 
+        the color of the comments can be changed using a color picker in the popup box. The color that
+        is chosen is saved.
+    </p>
+    <h4>How it works</h4>
+    <p>The extension loads the style changes from a content script. To remember the color changes, a new 
+        content script must be loaded with JavaScript in order to use stored variables. The color picker is from
+        jscolor.js
+    </p>
+    <h3>GetHip</h3>
+    <p>This is a chrome extension that uses quickly searches a word on UrbanDictionary. The definition of the word appears
+        in a small window in the top left corner of the screen when searching a word through highlighting and clicking from
+        the context menu. Words can also be searched through the omnibox using the key word "hip".
+    </p>
+    <h4>How it works</h4>
+    <p>Uses chrome api and variables to open new tabs or windows with a url that matches if a user were to search the
+        word manually.
+    </p>
+    <h3>Song Poll Visualizer</h3>
+    <p>
+        This is a Java application that reads in polling data from a text file and stores this polling data into a 
+        linked list. This polling data can be visualized from a GUI showcasing what type of people like a song. These
+        "types" of people are classified by 1 of 4 hobbies, locations, or majors depending on which option you would like
+        to visualize.
+    </p>
+    <h4>How it works</h4>
+    <p>
+        Data is stored and sorted in a linked list. The sorting is handled with insertion sort and compares different values
+        depending on what type of people the GUI is representing.
+    </p>
+
+    <h3>Handwritten Number Reader</h3>
+    <p>This is a MATLAB application that analyzes the pixel colors in a small grid and predicts what number, 0 through 9,
+         that is written. The program is an assignment from the online Standford's Machine Learning course. Skeleton
+         code was also supplied by them.
+    </p>
+    <h4>How it works</h4>
+    <p>
+        Feedforward propagation was used to predict the numbers from parameters and the backpropagation was used to
+        calculate the parameters. Together, the program slowly learns how to predict the numbers from the handwriting.
+    </p>
+    <h2>About me: </h2>
+    <p> I am currently a junior at Virginia Tech studying Computer Science. When I'm not studying Computer Science,
+         I like to play guitar, piano and the occasional video game for fun.
+    </p>
+    <h2>Random HTML sideworks:</h2>
     <h2><a href="GuessANumber.html" title = "Guess a Number!"> Guess A Number!</a></h2>
     <h2><a href="TypeSomething.html" title = "Type Something!"> Type Something!</a></h2>
+    <h2><a href="jeremy.html" title = "Jeremy"> For Jeremy</a></h2>
 </body>
 
 </html>
