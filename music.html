@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html>
+<head>
+	<style type="text/css">
+		h1 {color:#336600;
+			font-family:"Comic Sans MS";
+			}
+		p {
+			line-height:140%;
+			text-indent:20px;
+		}
+		ol {
+			font-weight:bold;
+		}
+		ul {
+			font-style:italic;
+		}
+		h1 {text-align:center;}
+		body {background-color:darkslategray;
+		color:white;
+		};
+		
+	</style>
+	<title> Web Audio</title>
+</head>
+
+<body>
+<h1>sound</h1>
+    <audio src="Classique.mp3" type="audio/mpeg">
+        browser do not support audio
+	</audio>
+<button data-playing="false" role="switch" aria-checked="false">
+	<span>Play/Pause</span>
+</button>
+
+</body>
+<script type="text/javascript">
+    const audioContext =  new AudioContext();
+    const audioElement = document.querySelector("audio");
+    const track = audioContext.createMediaElementSource(audioElement);
+    track.connect(audioContext.destination);
+
+	const playButton = document.querySelector('button');
+
+	playButton.addEventListener('click', function() {
+		if (audioContext.state === 'suspended') {
+			audioContext.resume();
+		}
+
+		if (this.dataset.playing === 'false') {
+			audioElement.play();
+			this.dataset.playing = 'true';
+		}
+		else if(this.dataset.playing === 'true') {
+			audioElement.pause();
+			this.dataset.palying = 'false';
+		}
+		
+	}, false);
+
+	audioElement.addEventListener('ended', () => {
+		playButton.dataset.playing = 'false';
+	}, false);
+
+</script>
+</html>
