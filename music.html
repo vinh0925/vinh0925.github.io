@@ -25,8 +25,6 @@
 			top:50%;
 			left:50%;
 			transform: translate(-50%, -50%);
-			width: 75%;
-			height: 50%;
 		}
 		
 	</style>
@@ -61,6 +59,8 @@
 	
 	var canvas = document.getElementById("scene");
 	var canvasCtx = canvas.getContext('2d');
+	canvas.width = window.innerWidth * .75;
+	canvas.height = window.innerHeight * .5;
 	canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	//draw
