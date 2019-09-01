@@ -20,6 +20,12 @@
 		body {background-color:darkslategray;
 		color:white;
 		};
+		canvas {
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%, -50%)
+		}
 		
 	</style>
 	<title> Web Audio</title>
@@ -33,14 +39,48 @@
 <button data-playing="false" role="switch" aria-checked="false">
 	<span>Play/Pause</span>
 </button>
-<input type="range" id="volume" min ="0" max="2" value="1" step="0.01">
-
+<input type="range" id="volume" min ="0" max="2" value="1" step="0.05">
+<canvas id="scene"></canvas>
 </body>
 <script type="text/javascript">
     const audioContext =  new AudioContext();
     const audioElement = document.querySelector("audio");
     const track = audioContext.createMediaElementSource(audioElement);
     track.connect(audioContext.destination);
+	var analyser = audioContext.createAnalyser();
+	track.connect(analyser);
+
+
+	analyser.fftSize = 256;
+	var bufferLength = analyser.frequencyBinCount;
+	console.log(bufferLength);
+	var dataArray = new Uint8Array(bufferLength);
+	
+	var canvas = document.getElementById("scene");
+	var canvasCtx = canvas.getContext('2d');
+	canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+	
+	//draw
+	function draw(){
+		drawVisual = requestAnimationFrame(draw);
+
+		analyser.getByteFrequencyData(dataArray);
+
+		canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+		canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+		var barWidth = (canvas.width / bufferLength) * 2.5;
+		var barHeight;
+		var x = 0;
+
+		for (var i = 0; i < bufferLength; i++) {
+			barHeight = dataArray[i]/2;
+
+			canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50,50)';
+			canvasCtx.fillRect(x, canvas.height - barHeight/2, barWidth, barHeight);
+			x += barWidth + 1;
+		}
+	}
+
 
 	const playButton = document.querySelector('button');
 
@@ -72,6 +112,7 @@
 	volumeControl.addEventListener('input', function() {
 		gainNode.gain.value = this.value;
 	})
-
+	
+	draw();
 </script>
 </html>
