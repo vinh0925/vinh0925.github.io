@@ -24,7 +24,9 @@
 			position:absolute;
 			top:50%;
 			left:50%;
-			transform: translate(-50%, -50%)
+			transform: translate(-50%, -50%);
+			width: 75%;
+			height: 50%;
 		}
 		
 	</style>
@@ -39,7 +41,8 @@
 <button data-playing="false" role="switch" aria-checked="false">
 	<span>Play/Pause</span>
 </button>
-<input type="range" id="volume" min ="0" max="2" value="1" step="0.05">
+<input type="range" id="volume" min ="0" max="2" value="1" step="0.1">
+<br>
 <canvas id="scene"></canvas>
 </body>
 <script type="text/javascript">
