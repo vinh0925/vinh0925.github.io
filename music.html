@@ -67,7 +67,7 @@
 	const gainNode = audioContext.createGain();
 	track.connect(gainNode).connect(audioContext.destination);
 
-	const volumeContorl = document.querySelector('#volume');
+	const volumeControl = document.querySelector('#volume');
 
 	volumeControl.addEventListener('input', function() {
 		gainNode.gain.value = this.value;
