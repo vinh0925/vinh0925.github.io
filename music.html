@@ -68,12 +68,12 @@
 
 		analyser.getByteFrequencyData(dataArray);
 		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight * .75;
+		canvas.height = window.innerHeight;
 		canvasCtx.fillStyle = 'rgb(0, 0, 0)';
 		canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 		var centerX = canvas.width / 2; 
 		var centerY = canvas.height / 2;
-		var barWidth = (canvas.width / bufferLength) * 2.5;
+		var barWidth = (canvas.width / bufferLength) * 1.5;
 		var barHeight;
 		var x = 0;
 		var y = 0;
