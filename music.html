@@ -102,7 +102,8 @@
 	}
 
 	function drawBar(x1, y1, x2, y2, width) {
-		var lineColor = 'rgb(' + (y2 - x2 + 100) + ', 50,50)';
+		var height = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+		var lineColor = 'rgb(' + (height + 100) + ', 50,50)';
 		canvasCtx.strokeStyle = lineColor
 		canvasCtx.lineWidth = width;
 		canvasCtx.beginPath();
