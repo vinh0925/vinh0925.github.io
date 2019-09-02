@@ -23,8 +23,6 @@
 		canvas {
 			position:absolute;
 			transform: translate(-50%, -50%);
-			width: 100%;
-			text-align:center;
 		}
 		
 	</style>
@@ -60,9 +58,8 @@
 	var canvas = document.getElementById("scene");
 	var canvasCtx = canvas.getContext('2d');
 	var style = canvas.style;
-	
-	canvas.width = window.innerWidth * .75;
-	canvas.height = window.innerHeight * .5;
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight * .75;
 	canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	//draw
@@ -70,7 +67,8 @@
 		drawVisual = requestAnimationFrame(draw);
 
 		analyser.getByteFrequencyData(dataArray);
-
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight * .75;
 		canvasCtx.fillStyle = 'rgb(0, 0, 0)';
 		canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 		var barWidth = (canvas.width / bufferLength) * 2.5;
