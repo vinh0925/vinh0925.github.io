@@ -73,7 +73,7 @@
 		canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 		var centerX = canvas.width / 2; 
 		var centerY = canvas.height / 2;
-		var barWidth = (canvas.width / bufferLength) * 1.5;
+		var barWidth = 5;
 		var barHeight;
 		var x = 0;
 		var y = 0;
@@ -103,7 +103,7 @@
 
 	function drawBar(x1, y1, x2, y2, width) {
 		var height = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-		var lineColor = 'rgb(' + (height + 100) + ', 50,50)';
+		var lineColor = 'rgb(' + (235) + ', 50,50)';
 		canvasCtx.strokeStyle = lineColor
 		canvasCtx.lineWidth = width;
 		canvasCtx.beginPath();
