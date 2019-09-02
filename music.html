@@ -71,17 +71,44 @@
 		canvas.height = window.innerHeight * .75;
 		canvasCtx.fillStyle = 'rgb(0, 0, 0)';
 		canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+		var centerX = canvas.width / 2; 
+		var centerY = canvas.height / 2;
 		var barWidth = (canvas.width / bufferLength) * 2.5;
 		var barHeight;
 		var x = 0;
-
+		var y = 0;
+		var x2 = 0;
+		var y2 = 0;
+		var radius = 75;
+		//draws center circle
+		canvasCtx.beginPath();
+		canvasCtx.arc(centerX, centerY, radius, 0, 2* Math.PI);
+		canvasCtx.stroke();
 		for (var i = 0; i < bufferLength; i++) {
-			barHeight = dataArray[i] * 1.5;
+			var rads = 2 * Math.PI / bufferlength; 
 
-			canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50,50)';
-			canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-			x += barWidth + 1;
+			barHeight = dataArray[i] * 1.5;
+			
+			//set coordinates
+			x = centerX + Math.cos(rads * i) * (radius);
+			y = centerY + Math.sin(rads * i) * (radius);
+			x2 = centerX + Math.cos(rads * i) * (radius + barHeight);
+			y2 = centerY + Math.sin(rads * i) * (radius + barHeight);
+			//canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50,50)';
+			//canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+			//x += barWidth + 1;
+			drawBar(x, y, x2, y2, barWidth);
 		}
+	}
+
+	function drawBar(x1, y1, x2, y2, width) {
+		var lineColor = 'rgb(' + (y2 - x2 + 100) + ', 50,50)';
+		canvasCtx.strokeStyle = lineColor
+		canvasCtx.lineWidth = width;
+		canvasCtx.beginPath();
+		canvasCtx.moveTo(x1, y1);
+		canvasCtx.lineTo(x2, y2);
+		canvasCtx.stroke();
 	}
 
 
