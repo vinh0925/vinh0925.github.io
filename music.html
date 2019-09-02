@@ -3,7 +3,7 @@
 <html>
 <head>
 	<style type="text/css">
-		h1 {color:#336600;
+		h1 {color:lightsalmon;
 			font-family:"Comic Sans MS";
 			}
 		p {
@@ -17,13 +17,11 @@
 			font-style:italic;
 		}
 		h1 {text-align:center;}
-		body {background-color:darkslategray;
+		body {background-color:#606060;
 		color:white;
 		};
 		canvas {
 			position:absolute;
-			top:50%;
-			left:50%;
 			transform: translate(-50%, -50%);
 		}
 		
@@ -39,7 +37,7 @@
 <button data-playing="false" role="switch" aria-checked="false">
 	<span>Play/Pause</span>
 </button>
-<input type="range" id="volume" min ="0" max="2" value="1" step="0.1">
+<input type="range" id="volume" min ="0" max="2" value="1" step="0.5">
 <br>
 <canvas id="scene"></canvas>
 </body>
@@ -59,6 +57,8 @@
 	
 	var canvas = document.getElementById("scene");
 	var canvasCtx = canvas.getContext('2d');
+	var style = canvas.style;
+	
 	canvas.width = window.innerWidth * .75;
 	canvas.height = window.innerHeight * .5;
 	canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
@@ -79,7 +79,7 @@
 			barHeight = dataArray[i];
 
 			canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50,50)';
-			canvasCtx.fillRect(x, canvas.height - barHeight/2, barWidth, barHeight);
+			canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 			x += barWidth + 1;
 		}
 	}
